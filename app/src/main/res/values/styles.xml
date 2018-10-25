@@ -1,0 +1,21 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme"  parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">true</item>
+    </style>
+
+    <style name="OrangeTheme">
+        <item name="colorPrimary">@color/nuggetPrimaryColor</item>
+        <item name="android:statusBarColor">@color/nuggetPrimaryColorDark</item>
+        <item name="colorPrimaryDark">@color/nuggetPrimaryColorDark</item>
+        <item name="android:textColor">@color/darkText</item>
+    </style>
+
+    <style name="PurpleTheme">
+        <item name="colorPrimary">@color/grapesPrimaryColor</item>
+        <item name="android:statusBarColor">@color/grapesPrimaryColorDark</item>
+        <item name="colorPrimaryDark">@color/grapesPrimaryColorDark</item>
+        <item name="android:textColor">@color/lightText</item>
+    </style>
+</resources>

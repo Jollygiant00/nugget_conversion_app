@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Nuggets</string>
+
+    <string name="user_input">Input Weight</string>
+    <string name="calc_button">Nuggetize</string>
+    <string name="output_string">Total Nuggets</string>
+    <string name="pre_calc_text">Let\'s convert that shit to nuggets!</string>
+    <string name="post_calc_text">Mmmm..Nuggets..</string>
+    <string name="user_preferences">Preferences</string>
+    <string name="app_about">About</string>
+    <string name="grape_title">Grapes</string>
+</resources>

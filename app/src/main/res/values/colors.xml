@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="darkText">#212223</color>
+    <color name="lightText">#aeb0b2</color>
+
+    <color name="nuggetPrimaryColor">#FB8C00</color>
+    <color name="nuggetPrimaryColorDark">#E65100</color>
+
+    <color name="grapesPrimaryColor">#8E24AA</color>
+    <color name="grapesPrimaryColorDark">#4A148C</color>
+
+    <color name="colorAccent">#FF4081</color>
+</resources>

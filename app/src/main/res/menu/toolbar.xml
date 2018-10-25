@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:nuggets="http://schemas.android.com/tools"
+    android:background="@color/grapesPrimaryColorDark"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+    <item
+        android:id="@+id/action_preferences"
+        android:title="@string/user_preferences"
+        nuggets:showAsAction="never" />
+    <item
+        android:id="@+id/action_about"
+        android:title="@string/app_about"
+        nuggets:showAsAction="never" />
+
+</menu>
