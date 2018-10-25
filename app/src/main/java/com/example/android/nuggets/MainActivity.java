@@ -42,14 +42,11 @@ public class MainActivity extends AppCompatActivity {
     public void startCalculator(View view) {
         int resId = view.getId();
         Intent intent = new Intent(MainActivity.this, CalculateWeightToNuggets.class);
-        /**
-         * set string to resource id
-         */
         String selectedView = getResources().getResourceEntryName(resId);
         intent.putExtra(EXTRA_MESSAGE, selectedView);
 
         if (selectedView.equals("nuggetCalcButton")) {
-
+            setTheme(R.style.OrangeTheme);
         } else if (selectedView.equals("grapeCalcButton")) {
             setTheme(R.style.PurpleTheme);
         }
