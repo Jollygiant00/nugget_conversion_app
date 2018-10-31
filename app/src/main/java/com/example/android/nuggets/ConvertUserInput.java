@@ -2,38 +2,45 @@ package com.example.android.nuggets;
 
 import java.text.NumberFormat;
 
-public class ConvertUserInput {
+class ConvertUserInput {
 
-    public String convertUserInput(double userInput, String currentUnit, double unitOutput) {
-        double convertPoundsToGrams = (453.59237);
-        double convertKilosToGrams = (1000);
-        double convertOuncesToGrams = (28.3495);
+    /**
+     *
+     * @param userInput EditText from CalculateWeightToNuggets activity
+     * @param currentUnit unit value from spinner
+     * @param unitOutput user selected output object
+     * @return postFormatResult string from converted values and inputs
+     *
+     * This method converts user inputs from the CalculateWeightToNuggets activity
+     * and returns a formatted string to pass to the TextView in the activity.
+     *
+     */
+      String convertUserInput(double userInput, String currentUnit, double unitOutput) {
+        final double convertPoundsToGrams = (453.59237);
+        final double convertKilosToGrams = (1000);
+        final double convertOuncesToGrams = (28.3495);
         double preFormatResult;
+        double convertingUnit;
+        String postFormatResult;
 
-        /**
-         * Get user selected weight unit and format result for correct units
-         */
         switch (currentUnit) {
             case "kg":
-                preFormatResult = userInput * (convertKilosToGrams / unitOutput);
+                convertingUnit = convertKilosToGrams;
                 break;
             case "oz":
-                preFormatResult = userInput * (convertOuncesToGrams / unitOutput);
+                convertingUnit = convertOuncesToGrams;
                 break;
             default:
-                preFormatResult = userInput * (convertPoundsToGrams / unitOutput);
+                convertingUnit = convertPoundsToGrams;
                 break;
         }
 
-        /**
-         * convert double to integer
-         */
+        preFormatResult = userInput * (convertingUnit / unitOutput);
+
         NumberFormat nf = NumberFormat.getInstance();
         nf.setMaximumFractionDigits(0);
+        postFormatResult = nf.format((preFormatResult));
 
-        /**
-         * return formatted result
-         */
-        return nf.format((preFormatResult));
+        return postFormatResult;
     }
 }

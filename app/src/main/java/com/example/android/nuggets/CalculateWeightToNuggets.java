@@ -29,16 +29,9 @@ public class CalculateWeightToNuggets extends AppCompatActivity {
         setContentView(R.layout.activity_calculate_weight_to_nuggets);
         Button bCalcButton = findViewById(R.id.calcButton);
 
-        /**
-         * Get intent from Main Activity
-         */
         Intent intent = getIntent();
         final String selectedOutputUnit = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
 
-        /**
-        *Initialize custom tool bar
-         * Set color based on button id passed from Main Activity
-         */
         Toolbar myToolbar = findViewById(R.id.app_toolbar);
         setSupportActionBar(myToolbar);
 
@@ -58,18 +51,11 @@ public class CalculateWeightToNuggets extends AppCompatActivity {
             Log.e(TAG, "get support action bar error");
         }
 
-        /**
-         * Initialize spinner view to default of lb
-         */
         final Spinner selectedUnits = findViewById(R.id.inputUnits);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.unit_weight, android.R.layout.simple_spinner_item);
         selectedUnits.setSelection(1);
 
-        /**
-         * Set the dropdown view based on user selection
-         * sect selectedUnits variable based on selection
-         */
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         selectedUnits.setAdapter(adapter);
 
@@ -83,11 +69,6 @@ public class CalculateWeightToNuggets extends AppCompatActivity {
                 //TODO clear null value error
                 String userInputString = mUserWeightInput.getText().toString();
 
-                /**
-                 * Check if user input is null
-                 * set userInputInteger to 0 if null
-                 * Create toast informing user of null value
-                 */
                 if (userInputString.isEmpty()) {
                     userInputInteger = 0;
                     Context context = getApplicationContext();
@@ -97,15 +78,10 @@ public class CalculateWeightToNuggets extends AppCompatActivity {
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
                 } else {
-                    /**
-                     * If user input is not null parse string to int variable
-                     */
                     userInputInteger = Integer.parseInt(userInputString);
                 }
 
-                /**
-                 * get selectedUnits variable and set output unit
-                 */
+
                 switch (selectedOutputUnit) {
                     case ("nuggetCalcButton"):
                         unitOutput = 70.0;
@@ -117,19 +93,11 @@ public class CalculateWeightToNuggets extends AppCompatActivity {
                         unitOutput = 0;
                         break;
                 }
-
-                /**
-                 * Create new instance of UserInputObject
-                 * This passes user input, selected weight, and the output food
-                 */
                 ConvertUserInput nuggetObject = new ConvertUserInput();
                 String objectOutput = nuggetObject.convertUserInput(userInputInteger,
                                                             unitConversion,
                                                             unitOutput);
 
-                /**
-                 * Set output view
-                 */
                 mNuggetOutput.setText(objectOutput);
             }
         });

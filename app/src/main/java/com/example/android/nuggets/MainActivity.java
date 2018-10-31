@@ -16,9 +16,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /**
-         * Initialize custom toolbar
-         */
+        //Initialize customer toolbar
         Toolbar myToolbar = findViewById(R.id.app_toolbar);
         setSupportActionBar(myToolbar);
     }
@@ -29,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
 
         //MenuItem preferencesItem = menu.findItem(R.id.action_preferences);
         //MenuItem aboutItem = menu.findItem(R.id.action_about);
-
         return super.onCreateOptionsMenu(menu);
     }
 
